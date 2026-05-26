@@ -1145,15 +1145,16 @@
 
 .nav-switcher {
   position: fixed;
-  bottom: 20px;
+  top: calc(var(--topbar-height) + 10px);
   right: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   background: #fff;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  padding: 8px;
+  padding: 6px 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09), 0 1px 4px rgba(0, 0, 0, 0.05);
   z-index: 500;
 }
@@ -1169,7 +1170,7 @@
 
 .nav-switcher__options {
   display: flex;
-  gap: 3px;
+  gap: 2px;
 }
 
 .nav-switcher__btn {

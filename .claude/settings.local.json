@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__c08c2127-3640-4c82-97c3-4203cfb9f590__get_design_context",
+      "mcp__c08c2127-3640-4c82-97c3-4203cfb9f590__get_screenshot",
+      "Bash(curl -s -o \"/Users/dheepaknarayan/Desktop/Claude code/Navigation/screenshot.png\" \"https://www.figma.com/api/mcp/asset/926d335f-923a-4da5-9bcc-b32b038fe977\")",
+      "Bash(mkdir -p \"/Users/dheepaknarayan/Desktop/Claude code/Navigation/.claude\")",
+      "mcp__Claude_Preview__preview_start",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/dheepaknarayan/.nvm/versions/**)",
+      "Bash(command -v node)",
+      "Bash(ls /usr/bin/python* /usr/local/bin/python* /usr/bin/ruby* 2>/dev/null; which ruby; which php)",
+      "mcp__Claude_in_Chrome__list_connected_browsers"
+    ]
+  }
+}
