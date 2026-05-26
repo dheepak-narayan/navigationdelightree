@@ -1,0 +1,1199 @@
+/* ============================================================
+   BRAND BLOCK
+   ============================================================ */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding-left: var(--space-2-5);
+}
+
+.brand__logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ============================================================
+   SEARCH BAR
+   ============================================================ */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  width: 100%;
+  max-width: 510px;
+  height: 36px;
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 0 var(--space-2) 0 var(--space-2-5);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search-bar:focus-within {
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.07);
+}
+
+.search-bar__icon {
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+}
+.search-bar__icon [data-lucide] {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}
+
+.search-ai-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.search-bar__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  min-width: 0;
+}
+.search-bar__input::placeholder {
+  color: var(--text-subtle);
+}
+
+.search-bar__kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-bar__sep {
+  width: 1px;
+  height: 18px;
+  background: var(--border-default);
+  flex-shrink: 0;
+}
+
+.search-bar__side-icon {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.search-bar__side-icon:hover { color: var(--text-secondary); }
+.search-bar__side-icon [data-lucide] {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.75;
+}
+
+/* ============================================================
+   TOPBAR ACTIONS
+   ============================================================ */
+.btn-invite {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 13px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.btn-invite:hover {
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+.btn-invite [data-lucide] {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.icon-btn:hover {
+  background: var(--border-light);
+  color: var(--text-secondary);
+}
+.icon-btn [data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.75;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Dropdown wrapper — positions the menu relative to the avatar */
+.user-menu {
+  position: relative;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 6px;
+  z-index: 200;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-dropdown.is-open {
+  display: flex;
+}
+
+.user-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.user-dropdown__item:hover {
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+.user-dropdown__item [data-lucide] {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.75;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.user-avatar-fallback {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border-default);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav-section {
+  margin-bottom: 0;
+}
+
+.nav-section__label {
+  display: block;
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--nav-section-label);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: var(--space-2) var(--space-3) var(--space-1);
+}
+
+.nav-section + .nav-section .nav-section__label {
+  padding-top: var(--space-4);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-2-5);
+  border-radius: var(--radius-md);
+  color: var(--nav-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  min-height: 30px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link:hover {
+  background: var(--nav-hover-bg);
+}
+.nav-link:hover .nav-link__icon {
+  color: var(--text-secondary);
+}
+
+.nav-link--active {
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
+  font-weight: var(--font-weight-medium);
+}
+.nav-link--active .nav-link__icon {
+  color: var(--nav-active-icon);
+}
+
+.nav-link__icon {
+  color: var(--nav-icon);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.12s;
+}
+.nav-link__icon [data-lucide] {
+  width: 15px;
+  height: 15px;
+}
+
+.nav-link__text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Wraps text + badge so the badge sits tight next to the label */
+.nav-link__body {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.nav-link__body .nav-link__text {
+  flex: none;
+}
+
+.nav-link__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   SIDEBAR FOOTER
+   ============================================================ */
+.sidebar-footer-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.sidebar-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  color: var(--nav-icon);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar-icon-btn:hover {
+  background: var(--nav-hover-bg);
+  color: var(--text-secondary);
+}
+.sidebar-icon-btn [data-lucide] {
+  width: 15px;
+  height: 15px;
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.powered-by__logo {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.powered-by__logo svg {
+  width: 10px;
+  height: 10px;
+}
+
+.powered-by__text {
+  font-size: 11px;
+  color: var(--text-subtle);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.card__indicator {
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.card__indicator--blue   { background: var(--accent-blue); }
+.card__indicator--amber  { background: var(--accent-amber); }
+.card__indicator--purple { background: var(--accent-purple); }
+
+.card__header-link {
+  font-size: var(--font-size-sm);
+  color: var(--brand-primary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.card__header-link:hover { opacity: 0.75; }
+
+/* ============================================================
+   EXPORT BUTTON
+   ============================================================ */
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: 7px var(--space-3);
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-export:hover {
+  background: var(--border-light);
+  border-color: #d1d5db;
+}
+.btn-export [data-lucide] {
+  width: 13px;
+  height: 13px;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-6);
+  gap: var(--space-3);
+}
+
+.empty-state__img {
+  width: 90px;
+  height: 90px;
+}
+
+.empty-state__text {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+.quick-actions-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5) var(--space-5);
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px var(--space-4);
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  width: 100%;
+}
+.quick-action-btn:hover {
+  background: var(--bg-app);
+  border-color: #d1d5db;
+}
+
+/* ============================================================
+   FOCUS AREAS
+   ============================================================ */
+.focus-areas-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-area-row {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-light);
+  gap: var(--space-3);
+}
+
+.focus-area-row__label {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  min-width: 136px;
+  flex-shrink: 0;
+}
+
+.focus-area-row__value {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-danger);
+  min-width: 54px;
+  flex-shrink: 0;
+}
+
+.focus-area-row__location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  font-size: var(--font-size-md);
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.focus-area-row__arrow [data-lucide] {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TRAININGS
+   ============================================================ */
+.trainings-filter {
+  padding: var(--space-1) var(--space-5) var(--space-3);
+}
+
+.select-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7px var(--space-3);
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: border-color 0.15s;
+}
+.select-field:hover { border-color: #d1d5db; }
+.select-field [data-lucide] {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.training-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--border-light);
+}
+
+.training-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+.training-avatar--ud { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+.training-avatar--ua { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+.training-avatar--uy { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); }
+
+.training-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.training-item__name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.training-item__overdue {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.training-item__remind {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--brand-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.training-item__remind:hover { opacity: 0.7; }
+
+/* ============================================================
+   LOCATION LEADERBOARD
+   ============================================================ */
+.leaderboard-head {
+  padding: var(--space-4) var(--space-5) var(--space-1);
+}
+
+.leaderboard-date {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.leaderboard-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding: 0 var(--space-3);
+  border-bottom: 1px solid var(--border-default);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.leaderboard-tabs::-webkit-scrollbar { display: none; }
+
+.leaderboard-tab {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: var(--space-2) var(--space-2-5);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.12s, border-color 0.12s;
+  background: none;
+}
+.leaderboard-tab:hover { color: var(--text-secondary); }
+.leaderboard-tab--active {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--text-primary);
+}
+
+.leaderboard-tab [data-lucide] {
+  width: 10px;
+  height: 10px;
+  color: var(--text-subtle);
+}
+
+/* ============================================================
+   MY LOCATIONS
+   ============================================================ */
+.my-locations-body {
+  padding: var(--space-3) var(--space-5);
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+}
+
+.location-row__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.location-status-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background: #f0fdf4;
+  border: 1px solid #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.location-status-icon [data-lucide] {
+  width: 12px;
+  height: 12px;
+  color: #16a34a;
+}
+
+.location-row__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.location-row__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+}
+.location-row__right [data-lucide] {
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.divider {
+  height: 1px;
+  background: var(--border-default);
+}
+
+/* ============================================================
+   NAV STRUCTURAL HELPERS
+   ============================================================ */
+
+/* Cluster: a logical group of nav items with spacing as the separator.
+   No label — proximity + spacing communicates the grouping. */
+.nav-cluster {
+  margin-bottom: var(--space-4);
+}
+
+.nav-cluster:last-child {
+  margin-bottom: 0;
+}
+
+/* Thin separator (kept for optional use; not used in v1 label-free layout) */
+.nav-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: var(--space-3) var(--space-2-5);
+}
+
+/* ============================================================
+   COLLAPSIBLE HELP SECTION
+   ============================================================ */
+
+/* Reset <button> browser defaults so it matches <a class="nav-link"> exactly */
+.nav-help-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: left;
+}
+
+/* Chevron arrow inside the Help toggle button */
+/* Chevron starts pointing down; rotates to up when expanded */
+.nav-help-toggle__chevron {
+  margin-left: auto;
+  width: 13px;
+  height: 13px;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-help-toggle[aria-expanded="true"] .nav-help-toggle__chevron {
+  transform: rotate(180deg);
+}
+
+/* Hidden sub-items list; revealed on toggle */
+.nav-help-content {
+  display: none;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 2px;
+}
+
+.nav-help-content.is-open {
+  display: flex;
+}
+
+/* Sub-link: plain indented text, no icon, matches reference screenshot */
+.nav-link--sub {
+  padding: 6px var(--space-2-5) 6px 36px;
+  color: var(--nav-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  min-height: 28px;
+}
+
+.nav-link--sub:hover {
+  background: var(--nav-hover-bg);
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   SKELETON / PLACEHOLDER SYSTEM
+   ============================================================ */
+
+.skel {
+  display: block;
+  background: #e8e8e8;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/* Inline row of skeleton blocks */
+.skel-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Replaces the colored card__indicator bars */
+.skel-indicator {
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: #dedede;
+  flex-shrink: 0;
+}
+
+/* Replaces the empty-state body (centered circle + bar) */
+.skel-center-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-6);
+  gap: var(--space-4);
+}
+
+/* Overrides leaderboard-tabs for skeleton pill row */
+.skel-tab-row {
+  gap: var(--space-2) !important;
+  align-items: center !important;
+  padding: var(--space-3) var(--space-5) !important;
+}
+
+/* ============================================================
+   OPTION 2 — EXPANDABLE GROUP NAVIGATION
+   ============================================================ */
+
+/* ---- Group container ---- */
+.nav-group {
+  /* no internal bottom margin — spacing handled per-nav-v2 context below */
+  margin-bottom: 0;
+}
+
+/* ---- Group header ---- */
+/* Visually subordinate to nav items: smaller, lighter, more muted */
+.nav-group__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;                           /* chevron sits tight beside label */
+  padding: 3px var(--space-2-5);
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: var(--font-size-xs);     /* 11px — smaller than nav items (13px) */
+  font-weight: var(--font-weight-normal); /* 400 — lighter than nav items */
+  color: var(--text-muted);           /* #6b7280 — more muted than nav items */
+  letter-spacing: 0.04em;             /* subtle tracking aids readability at small size */
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  min-height: 24px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.nav-group__header:hover {
+  background: var(--nav-hover-bg);
+  color: var(--text-secondary);
+}
+
+/* Label — natural width; chevron follows immediately */
+.nav-group__label {
+  flex: none;
+}
+
+/* Chevron — reduced, tight to label */
+.nav-group__chevron {
+  width: 11px;
+  height: 11px;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.nav-group__header[aria-expanded="true"] .nav-group__chevron {
+  transform: rotate(180deg);
+}
+
+/* ---- Collapsible items ---- */
+.nav-group__items {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-group__items.is-open {
+  max-height: 280px;
+}
+
+/* Child items: indented + tighter vertical rhythm */
+.nav-group__items .nav-link {
+  padding: 4px var(--space-2-5) 4px 22px; /* 22px left = clear indent under header */
+  min-height: 28px;
+}
+
+/* ---- Expandable parent row (Chargebee-style continuous nav) ---- */
+/* Resets <button> to look and behave like a standard .nav-link */
+.nav-expand-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Chevron sits flush right; rotates 180° when expanded */
+.nav-expand-chevron {
+  margin-left: auto;
+  width: 13px;
+  height: 13px;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-expand-toggle[aria-expanded="true"] .nav-expand-chevron {
+  transform: rotate(180deg);
+}
+
+/* Collapsed by default — animated open via .is-open */
+.nav-expand-items {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.22s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-expand-items.is-open {
+  max-height: 320px;
+}
+
+/* Child link — icon-aligned indent so it sits under parent text, not under parent icon */
+.nav-link--child {
+  padding-left: 36px;
+  min-height: 28px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   OPTION 2 — FLAT LIST HELPERS
+   ============================================================ */
+
+/* Top-level list reset: no browser ul indentation */
+.v2-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtle spacer <li> — creates lightweight breathing room without
+   the visual weight of a full gap or section header */
+.v2-gap {
+  list-style: none;
+  height: 6px;         /* very subtle — half a nav row */
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Slightly larger gap used before utility items (Settings / Help) */
+.v2-gap--lg {
+  height: 14px;
+}
+
+/* ============================================================
+   OPTION 2 — SCOPED OVERRIDES  (#nav-v2)
+   ============================================================ */
+
+/* Tighter vertical density — enterprise feel without cramping */
+#nav-v2 .nav-link {
+  padding: 5px var(--space-2-5);
+  min-height: 28px;
+}
+
+/* Child rows: one step tighter than parents.
+   padding-left re-stated here because #nav-v2 .nav-link shorthand
+   (id specificity) would otherwise win over .nav-link--child alone. */
+#nav-v2 .nav-link--child {
+  padding-left: 36px;                  /* re-assert indent at same specificity level */
+  min-height: 26px;
+  font-size: var(--font-size-sm);      /* 12px — subordinate to parent 13px */
+  color: var(--text-secondary);
+}
+
+/* Utility links (Settings, Help): slightly muted — secondary prominence */
+#nav-v2 .v2-utility-link {
+  color: var(--text-muted);
+}
+#nav-v2 .v2-utility-link .nav-link__icon {
+  color: var(--text-subtle);
+}
+#nav-v2 .v2-utility-link:hover {
+  color: var(--text-secondary);
+}
+#nav-v2 .v2-utility-link:hover .nav-link__icon {
+  color: var(--nav-icon);
+}
+
+/* Active state — calmer: lighter background, same brand text */
+#nav-v2 .nav-link--active {
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--nav-active-text);
+  font-weight: var(--font-weight-medium);
+}
+#nav-v2 .nav-link--active .nav-link__icon {
+  color: var(--nav-active-icon);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   OPTION 4 — FLAT OPERATIONAL NAV
+   ============================================================ */
+
+/* Same list reset as v2 — suppresses browser ul padding */
+.v4-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Scoped density overrides ---- */
+
+/* 4px gap between every item (was 1px) */
+#nav-v4 .nav-list { gap: 5px; }
+
+/* Parent rows: 4px vertical padding → 26px min-height.
+   One notch tighter than v2 (5px/28px) to reinforce the
+   "dense operational rail" character. No spacers anywhere. */
+#nav-v4 .nav-link {
+  padding: 4px var(--space-2-5);
+  min-height: 26px;
+}
+
+/* Child rows: re-assert indent (id-specificity win) + tightest density */
+#nav-v4 .nav-link--child {
+  padding-left: 36px;
+  min-height: 24px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Active: intentionally uses the base .nav-link--active style (full #eef2ff)
+   rather than the lighter rgba override used in v2/v3. In a flat, equal-weight
+   nav the active item needs clear prominence to orient the user. No override
+   needed here — the base rule wins by default within the #nav-v4 scope. */
+
+/* ============================================================
+   OPTION 3 — SCOPED OVERRIDES  (#nav-v3)
+   ============================================================ */
+
+/* Within a cluster: 2px — items feel like one connected block */
+#nav-v3 .nav-list { gap: 2px; }
+
+/* Between clusters: 14px — clear section break, not airy */
+#nav-v3 .nav-cluster     { margin-bottom: 14px; }
+#nav-v3 .nav-cluster:last-child { margin-bottom: 0; }
+
+/* Active state — calmer variant (matches v2 treatment) */
+#nav-v3 .nav-link--active {
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--nav-active-text);
+  font-weight: var(--font-weight-medium);
+}
+#nav-v3 .nav-link--active .nav-link__icon {
+  color: var(--nav-active-icon);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   NAVIGATION VARIANT SWITCHER
+   ============================================================ */
+
+.nav-switcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09), 0 1px 4px rgba(0, 0, 0, 0.05);
+  z-index: 500;
+}
+
+.nav-switcher__label {
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0 4px 2px;
+}
+
+.nav-switcher__options {
+  display: flex;
+  gap: 3px;
+}
+
+.nav-switcher__btn {
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-subtle);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+.nav-switcher__btn:hover {
+  background: var(--bg-app);
+  color: var(--text-secondary);
+}
+.nav-switcher__btn--active {
+  background: var(--brand-primary);
+  color: #fff;
+}
+.nav-switcher__btn--active:hover {
+  background: var(--brand-primary-hover);
+  color: #fff;
+}

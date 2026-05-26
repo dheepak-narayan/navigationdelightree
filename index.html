@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delightree — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ============================= TOPBAR ============================= -->
+  <header class="topbar">
+
+    <!-- Brand -->
+    <a class="brand" href="#">
+      <img src="assets/logo.svg" alt="Delightree" class="brand__logo" />
+    </a>
+
+    <!-- Search -->
+    <div class="topbar__search">
+      <div class="search-bar">
+        <span class="search-bar__icon">
+          <i data-lucide="search"></i>
+        </span>
+        <input
+          type="text"
+          class="search-bar__input"
+          placeholder="Search or ask anything..."
+          aria-label="Search"
+        />
+        <span class="search-bar__kbd">⌘ K</span>
+        <div class="search-bar__sep"></div>
+        <span class="search-bar__side-icon">
+          <i data-lucide="mic"></i>
+        </span>
+        <span class="search-bar__side-icon">
+          <i data-lucide="settings"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="topbar__actions">
+      <button class="btn-invite">
+        <i data-lucide="plus"></i>
+        Invite
+      </button>
+      <button class="icon-btn topbar-chat-btn" id="topbar-chat-btn" aria-label="Chat" hidden>
+        <i data-lucide="message-circle"></i>
+      </button>
+      <button class="icon-btn" aria-label="Notifications">
+        <i data-lucide="bell"></i>
+      </button>
+<div class="user-menu">
+        <div class="user-avatar-fallback" role="button" aria-label="User profile" id="user-menu-trigger">J</div>
+        <div class="user-dropdown" id="user-dropdown" aria-hidden="true">
+          <a class="user-dropdown__item" href="#">
+            <i data-lucide="user"></i>
+            Profile
+          </a>
+          <a class="user-dropdown__item" href="#">
+            <i data-lucide="log-out"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ============================= SIDEBAR ============================= -->
+  <aside class="sidebar">
+
+    <nav id="nav-v1" class="sidebar__nav" aria-label="Main navigation">
+
+      <!-- Cluster 1: Home — standalone anchor -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link nav-link--active" href="#" aria-current="page">
+              <span class="nav-link__icon"><i data-lucide="home"></i></span>
+              <span class="nav-link__text">Home</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cluster 2: Operational workflows -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="clock"></i></span>
+              <span class="nav-link__text">Tasks</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="clipboard-list"></i></span>
+              <span class="nav-link__text">Forms &amp; checklists</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="building-2"></i></span>
+              <span class="nav-link__text">Site visits</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="map-pin"></i></span>
+              <span class="nav-link__text">Location launcher</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cluster 2: Delphi — AI/insights layer, elevated above comms -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="sparkles"></i></span>
+              <span class="nav-link__body"><span class="nav-link__text">Delphi</span><span class="nav-link__badge">BETA</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cluster 3: Communication channels -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="message-circle"></i></span>
+              <span class="nav-link__text">Chat</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="megaphone"></i></span>
+              <span class="nav-link__text">Announcements</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="ticket"></i></span>
+              <span class="nav-link__text">Support tickets</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cluster 4: Knowledge & compliance resources -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="book-open"></i></span>
+              <span class="nav-link__text">Knowledge base</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="award"></i></span>
+              <span class="nav-link__text">Training</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="git-branch"></i></span>
+              <span class="nav-link__text">Assignment paths</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="shield"></i></span>
+              <span class="nav-link__text">Compliance</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cluster 5: Utility — Settings (persistent) + Help (collapsible) -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="settings"></i></span>
+              <span class="nav-link__text">Settings</span>
+            </a>
+          </li>
+          <li>
+            <button class="nav-link nav-help-toggle" aria-expanded="false" aria-controls="help-submenu">
+              <span class="nav-link__icon"><i data-lucide="help-circle"></i></span>
+              <span class="nav-link__text">Help</span>
+              <i data-lucide="chevron-down" class="nav-help-toggle__chevron"></i>
+            </button>
+            <ul class="nav-help-content" id="help-submenu" aria-hidden="true">
+              <li>
+                <a class="nav-link nav-link--sub" href="#">
+                  <span class="nav-link__text">Delightree guide</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link nav-link--sub" href="#">
+                  <span class="nav-link__text">Report a bug</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- ===================== OPTION 3: CLUSTERED EXPANDABLE NAV ===================== -->
+    <nav id="nav-v3" class="sidebar__nav" aria-label="Clustered expandable navigation" hidden>
+
+      <!-- Home -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link nav-link--active" href="#" aria-current="page">
+              <span class="nav-link__icon"><i data-lucide="home"></i></span>
+              <span class="nav-link__text">Home</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Operational items — flat primary rows, grouped by proximity -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="clock"></i></span><span class="nav-link__text">Tasks</span></a></li>
+          <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="clipboard-list"></i></span><span class="nav-link__text">Forms &amp; checklists</span></a></li>
+          <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="building-2"></i></span><span class="nav-link__text">Site visits</span></a></li>
+          <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="map-pin"></i></span><span class="nav-link__text">Location launcher</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Delphi — standalone, separated by cluster spacing -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="sparkles"></i></span>
+              <span class="nav-link__body"><span class="nav-link__text">Delphi</span><span class="nav-link__badge">BETA</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Expandable groups: Communication + Learning & Compliance -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v3-comm">
+              <span class="nav-link__icon"><i data-lucide="message-square"></i></span>
+              <span class="nav-link__text">Communication</span>
+              <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+            </button>
+            <ul class="nav-expand-items" id="v3-comm" aria-hidden="true">
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="message-circle"></i></span><span class="nav-link__text">Chat</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="megaphone"></i></span><span class="nav-link__text">Announcements</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="ticket"></i></span><span class="nav-link__text">Support tickets</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v3-learning">
+              <span class="nav-link__icon"><i data-lucide="layers"></i></span>
+              <span class="nav-link__text">Learning</span>
+              <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+            </button>
+            <ul class="nav-expand-items" id="v3-learning" aria-hidden="true">
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="book-open"></i></span><span class="nav-link__text">Knowledge base</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="award"></i></span><span class="nav-link__text">Training</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="git-branch"></i></span><span class="nav-link__text">Assignment paths</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="shield"></i></span><span class="nav-link__text">Compliance</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Utility cluster: Settings + Help -->
+      <div class="nav-cluster">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#">
+              <span class="nav-link__icon"><i data-lucide="settings"></i></span>
+              <span class="nav-link__text">Settings</span>
+            </a>
+          </li>
+          <li>
+            <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v3-help">
+              <span class="nav-link__icon"><i data-lucide="help-circle"></i></span>
+              <span class="nav-link__text">Help</span>
+              <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+            </button>
+            <ul class="nav-expand-items" id="v3-help" aria-hidden="true">
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="book"></i></span><span class="nav-link__text">Delightree guide</span></a></li>
+              <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="bug"></i></span><span class="nav-link__text">Report a bug</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- ===================== OPTION 4: FLAT OPERATIONAL NAV ===================== -->
+    <nav id="nav-v4" class="sidebar__nav" aria-label="Flat operational navigation" hidden>
+      <ul class="nav-list v4-nav-list">
+
+        <li><a class="nav-link nav-link--active" href="#" aria-current="page"><span class="nav-link__icon"><i data-lucide="home"></i></span><span class="nav-link__text">Home</span></a></li>
+        <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="clock"></i></span><span class="nav-link__text">Tasks</span></a></li>
+        <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="clipboard-list"></i></span><span class="nav-link__text">Forms &amp; checklists</span></a></li>
+        <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="building-2"></i></span><span class="nav-link__text">Site visits</span></a></li>
+        <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="map-pin"></i></span><span class="nav-link__text">Location launcher</span></a></li>
+
+        <li>
+          <a class="nav-link" href="#">
+            <span class="nav-link__icon"><i data-lucide="sparkles"></i></span>
+            <span class="nav-link__body"><span class="nav-link__text">Delphi</span><span class="nav-link__badge">BETA</span></span>
+          </a>
+        </li>
+
+        <li>
+          <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v4-comm">
+            <span class="nav-link__icon"><i data-lucide="message-square"></i></span>
+            <span class="nav-link__text">Communication</span>
+            <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+          </button>
+          <ul class="nav-expand-items" id="v4-comm" aria-hidden="true">
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="message-circle"></i></span><span class="nav-link__text">Chat</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="megaphone"></i></span><span class="nav-link__text">Announcements</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="ticket"></i></span><span class="nav-link__text">Support tickets</span></a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v4-learning">
+            <span class="nav-link__icon"><i data-lucide="layers"></i></span>
+            <span class="nav-link__text">Learning</span>
+            <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+          </button>
+          <ul class="nav-expand-items" id="v4-learning" aria-hidden="true">
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="book-open"></i></span><span class="nav-link__text">Knowledge base</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="award"></i></span><span class="nav-link__text">Training</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="git-branch"></i></span><span class="nav-link__text">Assignment paths</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="shield"></i></span><span class="nav-link__text">Compliance</span></a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="#"><span class="nav-link__icon"><i data-lucide="settings"></i></span><span class="nav-link__text">Settings</span></a></li>
+
+        <li>
+          <button class="nav-link nav-expand-toggle" aria-expanded="false" aria-controls="v4-help">
+            <span class="nav-link__icon"><i data-lucide="help-circle"></i></span>
+            <span class="nav-link__text">Help</span>
+            <i data-lucide="chevron-down" class="nav-expand-chevron"></i>
+          </button>
+          <ul class="nav-expand-items" id="v4-help" aria-hidden="true">
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="book"></i></span><span class="nav-link__text">Delightree guide</span></a></li>
+            <li><a class="nav-link nav-link--child" href="#"><span class="nav-link__icon"><i data-lucide="bug"></i></span><span class="nav-link__text">Report a bug</span></a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar__footer">
+      <div class="powered-by">
+        <div class="powered-by__logo">
+          <svg viewBox="0 0 12 12" fill="none">
+            <rect width="12" height="12" rx="2" fill="white" fill-opacity="0"/>
+            <path d="M2 3h3v6H2zM7 3h3v2.5H7zM7 6.5h3V9H7z" fill="white"/>
+          </svg>
+        </div>
+        <span class="powered-by__text">Powered by Delightree</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================= MAIN CONTENT ============================= -->
+  <main class="main-content">
+
+    <!-- Page Header skeleton -->
+    <div class="page-header">
+      <div class="skel" style="width:220px;height:27px;border-radius:6px;"></div>
+      <div class="skel" style="width:108px;height:30px;border-radius:6px;"></div>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="dashboard-grid">
+
+      <!-- Row 1: Announcements + Quick Actions -->
+      <div class="dashboard-row dashboard-row--wide-narrow">
+
+        <!-- Announcements skeleton -->
+        <div class="card">
+          <div class="card__header">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:120px;height:14px;border-radius:5px;"></div>
+            </div>
+            <div class="skel" style="width:46px;height:12px;border-radius:4px;"></div>
+          </div>
+          <div class="skel-center-body">
+            <div class="skel" style="width:76px;height:76px;border-radius:50%;"></div>
+            <div class="skel" style="width:158px;height:12px;border-radius:4px;"></div>
+          </div>
+        </div>
+
+        <!-- Quick Actions skeleton -->
+        <div class="card">
+          <div class="card__header">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:100px;height:14px;border-radius:5px;"></div>
+            </div>
+          </div>
+          <div class="quick-actions-body">
+            <div class="skel" style="width:100%;height:36px;border-radius:8px;"></div>
+            <div class="skel" style="width:100%;height:36px;border-radius:8px;"></div>
+            <div class="skel" style="width:100%;height:36px;border-radius:8px;"></div>
+            <div class="skel" style="width:100%;height:36px;border-radius:8px;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 2: Focus Areas + Trainings -->
+      <div class="dashboard-row dashboard-row--equal">
+
+        <!-- Focus Areas skeleton -->
+        <div class="card">
+          <div class="card__header">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:90px;height:14px;border-radius:5px;"></div>
+            </div>
+          </div>
+          <div class="focus-areas-list">
+            <div class="focus-area-row">
+              <div class="skel" style="width:120px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:36px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:150px;height:13px;border-radius:4px;"></div>
+            </div>
+            <div class="focus-area-row">
+              <div class="skel" style="width:108px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:44px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:168px;height:13px;border-radius:4px;"></div>
+            </div>
+            <div class="focus-area-row">
+              <div class="skel" style="width:98px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:28px;height:13px;border-radius:4px;"></div>
+              <div class="skel" style="width:90px;height:13px;border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainings skeleton -->
+        <div class="card">
+          <div class="card__header">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:80px;height:14px;border-radius:5px;"></div>
+            </div>
+          </div>
+          <div class="trainings-filter">
+            <div class="skel" style="width:100%;height:34px;border-radius:8px;"></div>
+          </div>
+          <div class="training-list">
+            <div class="training-item">
+              <div class="skel" style="width:36px;height:36px;border-radius:8px;flex-shrink:0;"></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;">
+                <div class="skel" style="width:75%;height:12px;border-radius:4px;"></div>
+                <div class="skel" style="width:50%;height:11px;border-radius:4px;"></div>
+              </div>
+              <div class="skel" style="width:40px;height:12px;border-radius:4px;flex-shrink:0;"></div>
+            </div>
+            <div class="training-item">
+              <div class="skel" style="width:36px;height:36px;border-radius:8px;flex-shrink:0;"></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;">
+                <div class="skel" style="width:70%;height:12px;border-radius:4px;"></div>
+                <div class="skel" style="width:45%;height:11px;border-radius:4px;"></div>
+              </div>
+              <div class="skel" style="width:40px;height:12px;border-radius:4px;flex-shrink:0;"></div>
+            </div>
+            <div class="training-item">
+              <div class="skel" style="width:36px;height:36px;border-radius:8px;flex-shrink:0;"></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;">
+                <div class="skel" style="width:65%;height:12px;border-radius:4px;"></div>
+                <div class="skel" style="width:40%;height:11px;border-radius:4px;"></div>
+              </div>
+              <div class="skel" style="width:40px;height:12px;border-radius:4px;flex-shrink:0;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 3: Location Leaderboard + My Locations -->
+      <div class="dashboard-row dashboard-row--wide-narrow">
+
+        <!-- Location Leaderboard skeleton -->
+        <div class="card">
+          <div class="leaderboard-head">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:160px;height:14px;border-radius:5px;"></div>
+            </div>
+            <div class="skel" style="width:130px;height:11px;border-radius:4px;margin-top:6px;margin-left:12px;"></div>
+          </div>
+          <div class="leaderboard-tabs skel-tab-row">
+            <div class="skel" style="width:88px;height:20px;border-radius:10px;"></div>
+            <div class="skel" style="width:120px;height:20px;border-radius:10px;"></div>
+            <div class="skel" style="width:68px;height:20px;border-radius:10px;"></div>
+            <div class="skel" style="width:130px;height:20px;border-radius:10px;"></div>
+            <div class="skel" style="width:78px;height:20px;border-radius:10px;"></div>
+          </div>
+        </div>
+
+        <!-- My Locations skeleton -->
+        <div class="card">
+          <div class="card__header">
+            <div class="skel-row">
+              <div class="skel-indicator"></div>
+              <div class="skel" style="width:100px;height:14px;border-radius:5px;"></div>
+            </div>
+          </div>
+          <div class="my-locations-body">
+            <div class="location-row">
+              <div class="location-row__left">
+                <div class="skel" style="width:26px;height:26px;border-radius:50%;"></div>
+                <div class="skel" style="width:60px;height:13px;border-radius:4px;"></div>
+              </div>
+              <div class="skel" style="width:36px;height:13px;border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- Navigation variant switcher — fixed bottom-right, for prototype review -->
+<div class="nav-switcher" role="group" aria-label="Navigation variant switcher">
+  <span class="nav-switcher__label">Nav variant</span>
+  <div class="nav-switcher__options">
+    <button class="nav-switcher__btn nav-switcher__btn--active" data-nav="v1">Option 1</button>
+    <button class="nav-switcher__btn" data-nav="v4">Option 2</button>
+    <button class="nav-switcher__btn" data-nav="v3">Option 3</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
